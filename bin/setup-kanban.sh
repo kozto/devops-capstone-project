@@ -50,6 +50,16 @@ if ! command -v gh &> /dev/null; then
     exit 1
 fi
 
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+    echo -e "${RED}Error: jq is not installed.${NC}"
+    echo "jq is required for JSON parsing. Please install it:"
+    echo "  - macOS: brew install jq"
+    echo "  - Ubuntu/Debian: sudo apt-get install jq"
+    echo "  - Or visit: https://stedolan.github.io/jq/"
+    exit 1
+fi
+
 # Check authentication
 echo -e "${YELLOW}Checking GitHub CLI authentication...${NC}"
 if ! gh auth status &> /dev/null; then
@@ -80,15 +90,16 @@ fi
 echo -e "${GREEN}✓ Project created successfully${NC}"
 echo -e "  URL: ${PROJECT_URL}"
 
-# Extract project number from URL
-PROJECT_NUMBER=$(echo "$PROJECT_URL" | grep -oP 'projects/\K[0-9]+')
+# Extract project number from URL (using portable sed instead of grep -P)
+PROJECT_NUMBER=$(echo "$PROJECT_URL" | sed -n 's/.*projects\/\([0-9]*\).*/\1/p')
+
+if [ -z "$PROJECT_NUMBER" ]; then
+    echo -e "${RED}Error: Failed to extract project number from URL${NC}"
+    exit 1
+fi
 
 echo ""
 echo -e "${YELLOW}Configuring project columns...${NC}"
-
-# Get the project ID for further operations
-PROJECT_ID=$(gh project list --owner "${REPO_OWNER}" --format json | \
-    jq -r ".projects[] | select(.number == ${PROJECT_NUMBER}) | .id")
 
 # Note: GitHub Projects v2 uses "fields" instead of traditional columns
 # The default "Status" field needs to be configured with custom options

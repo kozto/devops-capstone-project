@@ -20,6 +20,10 @@ Before setting up the Kanban board, ensure you have:
 
 - GitHub CLI (`gh`) installed on your system
   - Download from: https://cli.github.com/
+- `jq` command-line JSON processor
+  - macOS: `brew install jq`
+  - Ubuntu/Debian: `sudo apt-get install jq`
+  - Or visit: https://stedolan.github.io/jq/
 - Authenticated with GitHub CLI
   - Run: `gh auth login`
 - Project scope enabled for your GitHub token
@@ -123,6 +127,13 @@ Install GitHub CLI:
 - **macOS**: `brew install gh`
 - **Ubuntu/Debian**: `sudo apt install gh`
 - **Windows**: Download from https://cli.github.com/
+
+### "jq: command not found"
+
+Install jq:
+- **macOS**: `brew install jq`
+- **Ubuntu/Debian**: `sudo apt-get install jq`
+- **Windows**: Download from https://stedolan.github.io/jq/
 
 ### "Not authenticated with GitHub CLI"
 
