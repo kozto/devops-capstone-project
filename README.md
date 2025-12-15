@@ -3,7 +3,14 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)
 
-This repository contains the starter code for the project in [**IBM-CD0285EN-SkillsNetwork DevOps Capstone Project**](https://www.coursera.org/learn/devops-capstone-project?specialization=devops-and-software-engineering) which is part of the [**IBM DevOps and Software Engineering Professional Certificate**](https://www.coursera.org/professional-certificates/devops-and-software-engineering)
+This project involves the development of a **Customer Account Microservice** for an e-commerce website. The service allows functionality to create, read, update, list, and delete customer accounts.
+
+It is built using **Python Flask** and utilizes **PostgreSQL** for persistence. The project demonstrates a comprehensive DevOps lifecycle, including:
+*   Agile planning with GitHub Projects.
+*   CI/CD pipelines using GitHub Actions and Tekton.
+*   Code quality analysis.
+*   Containerization with Docker.
+*   Orchestration and deployment on Kubernetes/OpenShift.
 
 ## Usage
 
