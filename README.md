@@ -18,6 +18,16 @@ You should use this template to start your DevOps Capstone project. It contains 
 
 Do Not fork this code! It is meant to be used by pressing the  <span style=color:white;background:green>**Use this Template**</span> button in GitHub. This will copy the code to your own repository with no connection back to the original repository like a fork would. This is what you want.
 
+## Kanban Board Setup
+
+This project includes a Kanban board for Agile project management. To set up the GitHub Project board with custom workflow columns, run:
+
+```bash
+./bin/setup-kanban.sh
+```
+
+For detailed instructions and manual setup options, see [KANBAN_SETUP.md](KANBAN_SETUP.md).
+
 ## Development Environment
 
 These labs are designed to be executed in the IBM Developer Skills Network Cloud IDE with OpenShift. Please use the links provided in the Coursera Capstone project to access the lab environment.
