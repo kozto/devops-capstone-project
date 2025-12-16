@@ -4,10 +4,17 @@
 #   - GitHub CLI (gh) must be installed
 #   - You must be authenticated (run: gh auth login)
 #   - You must have write access to the repository
+# 
+# Usage:
+#   ./create_user_stories.sh [REPO_OWNER/REPO_NAME]
+#   
+# If REPO is not provided, defaults to kozto/devops-capstone-project
+# You can also set GITHUB_REPO environment variable
 
 set -e
 
-REPO="kozto/devops-capstone-project"
+# Use parameter, environment variable, or default
+REPO="${1:-${GITHUB_REPO:-kozto/devops-capstone-project}}"
 LABEL="user story"
 
 echo "Creating user stories in repository: $REPO"

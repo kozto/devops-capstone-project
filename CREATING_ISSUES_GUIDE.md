@@ -30,7 +30,8 @@ All necessary files have been created in the `.github/` directory:
 If you have GitHub CLI installed and authenticated:
 
 ```bash
-cd /home/runner/work/devops-capstone-project/devops-capstone-project
+# Navigate to your repository root directory
+cd path/to/devops-capstone-project
 ./.github/create_user_stories.sh
 ```
 
@@ -42,7 +43,8 @@ If you prefer Python and have a GitHub token:
 
 ```bash
 export GITHUB_TOKEN=your_token_here
-cd /home/runner/work/devops-capstone-project/devops-capstone-project
+# Navigate to your repository root directory
+cd path/to/devops-capstone-project
 python3 ./.github/create_user_stories.py
 ```
 

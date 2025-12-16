@@ -44,11 +44,14 @@ Seven user stories have been prepared covering the following project milestones:
 
 **Steps:**
 ```bash
-# Navigate to the repository root
-cd /home/runner/work/devops-capstone-project/devops-capstone-project
+# Navigate to your repository root directory
+cd path/to/devops-capstone-project
 
-# Run the script
+# Run the script (uses default repo or specify your own)
 ./.github/create_user_stories.sh
+
+# Or specify a different repository
+./.github/create_user_stories.sh owner/repo-name
 ```
 
 The script will create all seven issues automatically and provide links to view them.
@@ -66,11 +69,14 @@ The script will create all seven issues automatically and provide links to view 
 # Set your GitHub token as an environment variable
 export GITHUB_TOKEN=your_personal_access_token_here
 
-# Navigate to the repository root
-cd /home/runner/work/devops-capstone-project/devops-capstone-project
+# Navigate to your repository root directory
+cd path/to/devops-capstone-project
 
-# Run the script
+# Run the script (uses default repo or specify your own)
 python3 ./.github/create_user_stories.py
+
+# Or specify a different repository
+python3 ./.github/create_user_stories.py owner repo-name
 ```
 
 The script will create all seven issues and show the results.

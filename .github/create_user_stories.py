@@ -6,6 +6,12 @@ Prerequisites:
   - requests library (pip install requests)
   - GitHub Personal Access Token with 'repo' scope
   - Export token as environment variable: export GITHUB_TOKEN=your_token_here
+
+Usage:
+  python3 create_user_stories.py [REPO_OWNER] [REPO_NAME]
+  
+If REPO_OWNER and REPO_NAME are not provided, defaults to kozto/devops-capstone-project
+You can also set GITHUB_REPO environment variable as "owner/repo"
 """
 
 import os
@@ -13,9 +19,16 @@ import sys
 import json
 import requests
 
-# Configuration
-REPO_OWNER = "kozto"
-REPO_NAME = "devops-capstone-project"
+# Configuration - allow overrides via command line or environment
+if len(sys.argv) >= 3:
+    REPO_OWNER = sys.argv[1]
+    REPO_NAME = sys.argv[2]
+elif "GITHUB_REPO" in os.environ and "/" in os.environ["GITHUB_REPO"]:
+    REPO_OWNER, REPO_NAME = os.environ["GITHUB_REPO"].split("/", 1)
+else:
+    REPO_OWNER = "kozto"
+    REPO_NAME = "devops-capstone-project"
+
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
 if not GITHUB_TOKEN:
